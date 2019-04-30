@@ -9,8 +9,15 @@
 </head>
 <body>
     <?php
+        
         include 'nav.php';
     ?>
     <h1>Login</h1>
+    <form action="home.php" method="post">
+        <input type="text" name="username">
+        <br>
+        <input type="text" name="password">
+        <input type="submit" value="Login">
+    </form>
 </body>
 </html>
