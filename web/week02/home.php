@@ -20,7 +20,7 @@
     ?>
     <h1>Home</h1>
     <form action="login.php" method="post">
-        <input type="button" name="logout" value="Logout">
+        <input type="submit" name="logout" value="Logout">
     </form>
     <?php
         if (isset($_SESSION['user'])){
