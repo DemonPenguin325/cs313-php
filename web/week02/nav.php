@@ -7,13 +7,13 @@
                 $home = "";
                 $login = "";
                 $about = "";
-                if ($file == "home.php"){
+                if ($file == "/week02/home.php"){
                     $home = "highlight";
                 }
-                else if ($file == "about-us.php"){
+                else if ($file == "/week02/about-us.php"){
                     $about = "highlight";
                 }
-                else if ($file == "login.php"){
+                else if ($file == "/week02/login.php"){
                     $login = "highlight";
                 }
                 echo "<li class='$home'><a href='./home.php'>Home</a></li>";
