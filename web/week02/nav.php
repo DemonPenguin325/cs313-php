@@ -3,17 +3,17 @@
         <h3>AlphaCo.</h3>
         <ul>
             <?php
-                $file = __FILE__;
+                $file = $_SERVER['PHP_SELF'];//basename(__FILE__, ".php");
                 $home = "";
                 $login = "";
                 $about = "";
-                if (__FILE__ == "home.php"){
+                if ($file == "home.php"){
                     $home = "highlight";
                 }
-                else if (__FILE__ == "about-us.php"){
+                else if ($file == "about-us.php"){
                     $about = "highlight";
                 }
-                else if (__FILE__ == "login.php"){
+                else if ($file == "login.php"){
                     $login = "highlight";
                 }
                 echo "<li class='$home'><a href='./home.php'>Home</a></li>";
