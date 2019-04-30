@@ -9,16 +9,24 @@
 </head>
 <body>
     <?php
+        include 'nav.php';
         if (isset($_POST['username'])){
             session_start();
             $_SESSION['user'] = $_POST['username'];
         }
-        include 'nav.php';
+        if (!isset($_SESSION['user'])){
+            header('Location: /week02/login.php');
+        }
+    ?>
+    <h1>Home</h1>
+    <form action="login.php" method="post">
+        <input type="button" name="logout" value="Logout">
+    </form>
+    <?php
         if (isset($_SESSION['user'])){
             $user = $_SESSION['user'];
             echo "<h1>Welcome $user!</h1>";
         }
     ?>
-    <h1>Home</h1>
 </body>
 </html>

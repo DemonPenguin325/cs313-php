@@ -9,8 +9,10 @@
 </head>
 <body>
     <?php
-        
         include 'nav.php';
+        if (isset($_POST['logout'])){
+            unset($_SESSION['user']);
+        }
     ?>
     <h1>Login</h1>
     <form action="home.php" method="post">
