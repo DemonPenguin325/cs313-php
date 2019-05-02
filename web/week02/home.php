@@ -10,8 +10,8 @@
 <body>
     <?php
         include 'nav.php';
+        session_start();
         if (isset($_POST['username'])){
-            session_start();
             $_SESSION['user'] = $_POST['username'];
         }
         if (!isset($_SESSION['user'])){
