@@ -49,6 +49,9 @@
         <span class="sr-only">Next</span>
     </a>
     </div>
+    <!-- End Carousel -->
+    <h3>Main Hobby</h3>
+    <p>I love medieval fantasy and dragons. I love doing LARP (Live Action Role Play) and sword fighting as shown in the last picture where I (on the right) am fighting this other guy in the finals round of a tournament. (I didn't win, but I was close)</p>
     
 </body>
 </html>
