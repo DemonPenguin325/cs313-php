@@ -7,7 +7,6 @@
     <?php
         include 'lib.php';
         ?>
-    <link rel="stylesheet" href="style.css">
     <title>Home</title>
 </head>
 <body>
