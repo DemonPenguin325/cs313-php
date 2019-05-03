@@ -6,7 +6,7 @@
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">Home</a></li>
       <li><a href="#">Home</a></li>
-      <li><a href="#">Assignments</a></li>
+      <li><a href="./assignments.php">Assignments</a></li>
       <li><a href="#">Other</a></li>
     </ul>
   </div>
