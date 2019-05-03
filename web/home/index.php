@@ -27,15 +27,15 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
         <div class="item active">
-        <img src="Do not meddle with Dragons.jpg" alt="Do not meddle with Dragons">
+        <img src="Resources/Do not meddle with Dragons.jpg" alt="Do not meddle with Dragons">
         </div>
 
         <div class="item">
-        <img src="tolkein.jpg" alt="Adventures with Dragons">
+        <img src="Resources/tolkein.jpg" alt="Adventures with Dragons">
         </div>
 
         <div class="item">
-        <img src="battle.jpg" alt="Sword fight">
+        <img src="Resources/battle.jpg" alt="Sword fight">
         </div>
     </div>
 
