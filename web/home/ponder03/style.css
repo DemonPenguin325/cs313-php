@@ -1,0 +1,31 @@
+body{
+    background-color: darkgrey;
+}
+
+.item{
+    background-color: gray;
+    margin: 5px;
+}
+.item-element{
+    display: block;
+    margin: 0 auto;
+    width: 70%;
+}
+.item-element:hover{
+    background-color: silver;
+}
+
+form{
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    border: 3px solid black;
+    padding: 5px;
+}
+form *{
+    margin: 3px auto;
+    padding: 3px;
+}
+.centered{
+    text-align: center;
+}
