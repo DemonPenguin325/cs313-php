@@ -18,7 +18,7 @@
 
     <div class="list-group">
         <a href="./index.php" class="list-group-item">Assignment 1</a>
-        <a href="#" class="list-group-item">Coming Soon...</a>
+        <a href="./ponder03/browse.php" class="list-group-item">Week 03 Shopping Cart</a>
         <a href="#" class="list-group-item">Coming Soon...</a>
     </div>
 
