@@ -39,11 +39,11 @@
         $stmt = $db->prepare('SELECT * FROM scriptures WHERE book = :name');
         $stmt->bindValue(':name', htmlspecialchars($_GET['name']), PDO::PARAM_STR);
         $stmt->execute();
-        //$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         echo '<p>Your requested data:</p>';
-        while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
+        foreach ($rows as $key => $value)
         {
-            echo '<strong>'.$row['book'].' '.$row['chapter'].':'.$row['verse'].'</strong> - "'.$row['content'].'"<br>';
+            echo '<strong>'.$value['book'].' '.$value['chapter'].':'.$value['verse'].'</strong> - "'.$value['content'].'"<br>';
          //echo 'user: ' . $row['username'] . ' password: ' . $row['password'] . '<br/>';
         }
         }
