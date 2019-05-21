@@ -30,7 +30,7 @@
                       die();
                     }
         
-                $stmt = $db->prepare('SELECT content FROM scriptures WHERE scripture_id = :id');
+                $stmt = $db->prepare('SELECT * FROM scriptures WHERE scripture_id = :id');
                 $stmt->bindValue(':id', htmlspecialchars($_GET['id']), PDO::PARAM_STR);
                 $stmt->execute();
                 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -38,6 +38,7 @@
                 //print_r($rows);
                 foreach ($rows as $key => $value)
                 {
+                    echo '<strong>'.$value['book'].' '.$value['chapter'].':'.$value['verse'].'</strong><br>';
                     echo '<p>'.$value['content'].'</p>';
                 }
     ?>
