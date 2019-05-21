@@ -36,7 +36,7 @@
         $statement = $db->query('SELECT * FROM scriptures');
         while ($row = $statement->fetch(PDO::FETCH_ASSOC))
         {
-            echo '<strong>'.$row['book'].' '.$row['chapter'].':'.$row['verse'].'</strong> - \"'.$row['content'].'\"<br>';
+            echo '<strong>'.$row['book'].' '.$row['chapter'].':'.$row['verse'].'</strong> - "'.$row['content'].'"<br>';
          //echo 'user: ' . $row['username'] . ' password: ' . $row['password'] . '<br/>';
         }
     ?>
