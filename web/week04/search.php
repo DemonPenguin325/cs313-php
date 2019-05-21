@@ -41,6 +41,7 @@
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         echo '<p>Your requested data:</p>';
+        print_r($rows);
         foreach ($rows as $key => $value)
         {
             echo '<strong>'.$value['book'].' '.$value['chapter'].':'.$value['verse'].'</strong> - "'.$value['content'].'"<br>';
