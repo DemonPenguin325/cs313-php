@@ -39,7 +39,7 @@ CREATE TABLE public.character (
 INSERT INTO public.class (class_name, class_type, class_rules, class_description)
 VALUES ('knight', 'fighter', 'Pauldron Shield', 'Can use a pauldron as a shield');
 
-INSERT INTO public.class (class_name, class_hp, class_rules, class_description)
+INSERT INTO public.class (class_name, class_type, class_hp, class_description)
 VALUES ('berserker', 'fighter', 2, 'Gains 2 additional hp.');
 
 INSERT INTO public.class (class_name, class_type, class_rules, class_description)
@@ -71,8 +71,8 @@ INSERT INTO public.race (race_name, race_rules, race_magic_rule, race_descriptio
 VALUES ('elf', 'Bow/Arrow', 'Magic Healing', 'Highborn Elf.');
 
 -- Test Character --
-INSERT INTO public.character (character_class, character_race)
-VALUES (SELECT class_id FROM public.class WHERE class_name = 'paladin', 1);
+-- INSERT INTO public.character (character_class, character_race)
+-- VALUES (SELECT class_id FROM public.class WHERE class_name = 'paladin', 1);
 
 
 
@@ -82,7 +82,7 @@ VALUES (SELECT class_id FROM public.class WHERE class_name = 'paladin', 1);
 --  'johndoe@mail.com',
 --  crypt('johnspassword', gen_salt('bf'))
 --);
-SELECT character_id FROM public.character WHERE character_owner = 1;
+--SELECT character_id FROM public.character WHERE character_owner = 1;
 --Select example--
 --SELECT id 
 --  FROM users
