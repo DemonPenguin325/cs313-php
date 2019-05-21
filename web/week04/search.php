@@ -40,6 +40,7 @@
         $stmt->bindValue(':name', htmlspecialchars($_GET['name']), PDO::PARAM_STR);
         $stmt->execute();
         //$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        echo '<p>Your requested data:</p>';
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
         {
             echo '<strong>'.$row['book'].' '.$row['chapter'].':'.$row['verse'].'</strong> - "'.$row['content'].'"<br>';
