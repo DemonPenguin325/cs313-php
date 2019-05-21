@@ -44,7 +44,7 @@
         //print_r($rows);
         foreach ($rows as $key => $value)
         {
-            echo '<strong>'.$value['book'].' '.$value['chapter'].':'.$value['verse'].'</strong> - "'.$value['content'].'"<br>';
+            echo '<a href="scriptureDetails.php?id='.$value['scripture_id'].'"><strong>'.$value['book'].' '.$value['chapter'].':'.$value['verse'].'</strong></a><br>';
          //echo 'user: ' . $row['username'] . ' password: ' . $row['password'] . '<br/>';
         }
         }
