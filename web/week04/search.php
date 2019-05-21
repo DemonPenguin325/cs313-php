@@ -37,7 +37,7 @@
             }
 
         $stmt = $db->prepare('SELECT * FROM scriptures WHERE book = :name');
-        $stmt->bindValue(':name', htmlspecialchars($_GET['name']), PDO::PARAM_STR);
+        $stmt->bindValue(':name', htmlspecialchars($_GET['book']), PDO::PARAM_STR);
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         echo '<p>Your requested data:</p>';
