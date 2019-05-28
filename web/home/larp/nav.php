@@ -19,7 +19,7 @@
             echo '<a href="./login.php"> Log in </a>';
           }
           else{
-            echo '<span>Welcome '.$_SESSION['username'].'!</span>';
+            echo '<span style="color: white;">Welcome '.$_SESSION['username'].'!</span>';
           }
 
         ?>

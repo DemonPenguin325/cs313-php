@@ -1,9 +1,9 @@
 <?php
     session_start();
     if (isset($_POST['username']) && isset($_POST['password'])){
-        echo '<p>Got the post request!</p>';
+        //echo '<p>Got the post request!</p>';
         include 'init_database.php';
-        echo '<p>Loaded database</p>';
+        //echo '<p>Loaded database</p>';
         $stmt = $db->prepare("SELECT * FROM public.user WHERE user_name = :name AND user_password = crypt(:pass, user_password);");
         $stmt->bindValue(':name', htmlspecialchars($_POST['username']), PDO::PARAM_STR);
         $stmt->bindValue(':pass', htmlspecialchars($_POST['password']), PDO::PARAM_STR);
@@ -11,10 +11,10 @@
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         if (sizeof(rows) < 1){
             // invalid credentials
-            echo '<p>invalid credentials</p>';
+            //echo '<p>invalid credentials</p>';
         }
         else{
-            echo '<p>Valid credentials</p>';
+            //echo '<p>Valid credentials</p>';
             //session_start();
             foreach ($rows as $key => $value){
                 if ($value['is_admin']){
@@ -27,7 +27,7 @@
         }
     }
     else{
-        echo '<p>didnt load with variables</p>';
+       // echo '<p>didnt load with variables</p>';
     }
 ?>
 
