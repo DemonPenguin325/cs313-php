@@ -19,7 +19,7 @@
     }
     if (isset($_GET['class'])){
         $stmt = $db->prepare('SELECT * FROM public.class WHERE class_name = :name');
-        $stmt->bindValue(':name', htmlspecialchars($_GET['race']), PDO::PARAM_STR);
+        $stmt->bindValue(':name', htmlspecialchars($_GET['class']), PDO::PARAM_STR);
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         foreach ($rows as $key => $value){
