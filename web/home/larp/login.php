@@ -21,6 +21,7 @@
                     $_SESSION['is_admin'] = true;
                 }
                 $_SESSION['username'] = $value['user_name'];
+                $_SESSION['authenticated'] = true;
             }
             header('Location: index.php');
         }
