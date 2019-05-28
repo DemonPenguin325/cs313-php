@@ -1,7 +1,7 @@
 <?php
     if (isset($_POST['username']) && isset($_POST['password'])){
         include 'init_database.php';
-        $stmt = $db->prepare("SELECT * FROM public.user WHERE user_name = :name AND user_password = crypt(':pass', user_password);");
+        $stmt = $db->prepare("SELECT * FROM public.user WHERE user_name = :name AND user_password = crypt(:pass, user_password);");
         $stmt->bindValue(':name', htmlspecialchars($_POST['username']), PDO::PARAM_STR);
         $stmt->bindValue(':name', htmlspecialchars($_POST['password']), PDO::PARAM_STR);
         $stmt->execute();
