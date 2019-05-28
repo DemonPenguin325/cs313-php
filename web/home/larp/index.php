@@ -1,5 +1,6 @@
 <?php
     //include 'init_database.php';
+    session_start();
 ?>
 
 <!DOCTYPE html>

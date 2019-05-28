@@ -1,33 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Log In</title>
-    <?php
-      include '../lib.php';
-    ?>
-    <script src="update.js"></script>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <?php
-            include 'nav.php'
-        ?>
-    </header>
-    <form action="login.php" method="post" class="box">
-        <div class="box-content">
-            <h2>Login</h2>
-            <label>Username: </label>
-            <input type="text" name="username" id="username" class="form-field"><br>
-            <label>Password: </label>
-            <input type="password" name="password" id="password" class="form-field"><br>
-            <input type="submit" value="Log In" class="btn-success">
-        </div>
-    </form>
-    <?php
+<?php
+    session_start();
     if (isset($_POST['username']) && isset($_POST['password'])){
         echo '<p>Got the post request!</p>';
         include 'init_database.php';
@@ -57,5 +29,35 @@
         echo '<p>didnt load with variables</p>';
     }
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Log In</title>
+    <?php
+      include '../lib.php';
+    ?>
+    <script src="update.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <?php
+            include 'nav.php'
+        ?>
+    </header>
+    <form action="login.php" method="post" class="box">
+        <div class="box-content">
+            <h2>Login</h2>
+            <label>Username: </label>
+            <input type="text" name="username" id="username" class="form-field"><br>
+            <label>Password: </label>
+            <input type="password" name="password" id="password" class="form-field"><br>
+            <input type="submit" value="Log In" class="btn-success">
+        </div>
+    </form>
 </body>
 </html>

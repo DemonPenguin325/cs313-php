@@ -1,6 +1,6 @@
 <?php
     $file = $_SERVER['PHP_SELF'];
-    session_start();
+    //session_start();
 ?>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
