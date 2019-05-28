@@ -3,7 +3,8 @@ CREATE EXTENSION pgcrypto;
 CREATE TABLE public.user (
     user_id              SERIAL PRIMARY KEY,
     user_name            VARCHAR(30) NOT NULL UNIQUE,
-    user_password        TEXT NOT NULL
+    user_password        TEXT NOT NULL,
+    is_admin             BOOLEAN NOT NULL
 );
 
 CREATE TABLE public.class (
@@ -26,14 +27,20 @@ CREATE TABLE public.race (
 
 CREATE TABLE public.character (
     character_id        SERIAL PRIMARY KEY,
-    character_class     INT REFERENCES public.class(class_id),
-    character_race      INT REFERENCES public.race(race_id),
+    class_id     INT REFERENCES public.class(class_id),
+    race_id      INT REFERENCES public.race(race_id),
     sub_race1           INT REFERENCES public.race(race_id),
     sub_race2           INT REFERENCES public.race(race_id),
     character_hp        INT,
     character_owner     INT REFERENCES public.user(user_id)
 );
 
+-- Create the admin user --
+INSERT INTO public.user (user_name, user_password, is_admin) VALUES (
+  'admin',
+  crypt('password', gen_salt('bf')),
+  TRUE
+);
 
 -- Base values for classes --
 INSERT INTO public.class (class_name, class_type, class_rules, class_description)
@@ -84,10 +91,10 @@ VALUES ('elf', 'Bow/Arrow', 'Magic Healing', 'Highborn Elf.');
 --);
 --SELECT character_id FROM public.character WHERE character_owner = 1;
 --Select example--
---SELECT id 
---  FROM users
--- WHERE email = 'johndoe@mail.com' 
---   AND password = crypt('johnspassword', password);
+--SELECT * 
+--  FROM public.user
+-- WHERE user_name = 'admin' 
+--   AND user_password = crypt('password', user_password);
 -- Returns 0 rows if password is wrong -- 
 
 --SELECT * FROM public.user;
