@@ -20,6 +20,7 @@ function setClass(name){
 	req = new XMLHttpRequest();
 	req.onreadystatechange = function(){
 		if (req.readyState == 4 && req.status == 200){
+            console.log(req.responseText);
             var info = JSON.parse(req.responseText);
             document.getElementById("class-info").innerHTML = info.race;
         }

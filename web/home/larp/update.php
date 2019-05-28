@@ -10,19 +10,23 @@
         $stmt = $db->prepare('SELECT * FROM public.race WHERE race_name = :name');
         $stmt->bindValue(':name', htmlspecialchars($_GET['race']), PDO::PARAM_STR);
         $stmt->execute();
-        $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        $name = $row['race_name'];
-        $desc = $row['race_description'];
-        $race_data = "<p class='box-subtitle'>".$name.": ".$desc."</p>";
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($rows as $key => $value){
+            $name = $value['race_name'];
+            $desc = $value['race_description'];
+            $race_data = "<p class='box-subtitle'>".$name.": ".$desc."</p>";
+        }
     }
     if (isset($_GET['class'])){
         $stmt = $db->prepare('SELECT * FROM public.class WHERE class_name = :name');
         $stmt->bindValue(':name', htmlspecialchars($_GET['race']), PDO::PARAM_STR);
         $stmt->execute();
-        $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        $name = $row['class_name'];
-        $desc = $row['class_description'];
-        $class_data = "<p class='box-subtitle'>".$name.": ".$desc."</p>";
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($rows as $key => $value){
+            $name = $value['class_name'];
+            $desc = $value['class_description'];
+            $class_data = "<p class='box-subtitle'>".$name.": ".$desc."</p>";
+        }
     }
     if (isset($_GET['stat'])){
 
