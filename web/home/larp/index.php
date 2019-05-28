@@ -27,17 +27,17 @@
         <div class="dropdown">
             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Race <span class="caret"></span></button>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#" onclick="addRace('Human')">Human</a></li>
-                <li><a class="dropdown-item" href="#" onclick="addRace('Elf')">Elf</a></li>
+                <li><a class="dropdown-item" href="#" onclick="addRace('human')">Human</a></li>
+                <li><a class="dropdown-item" href="#" onclick="addRace('elf')">Elf</a></li>
                 <li><a class="dropdown-item" href="#" onclick="addRace('skeleton/ghost')">Undead</a></li>
             </ul>
         </div>
         <div class="dropdown">
             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Class <span class="caret"></span></button>
             <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#" onclick="setClass('Knight')">Knight</a></li>
-            <li><a class="dropdown-item" href="#" onclick="setClass('Paladin')">Paladin</a></li>
-            <li><a class="dropdown-item" href="#" onclick="setClass('Bard')">Bard</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setClass('knight')">Knight</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setClass('paladin')">Paladin</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setClass('bard')">Bard</a></li>
             </ul>
         </div>
         <div class="dropdown">
