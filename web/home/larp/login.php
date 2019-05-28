@@ -51,6 +51,9 @@
             header('Location: index.php');
         }
     }
+    else{
+        echo '<p>didnt load with variables</p>';
+    }
 ?>
 </body>
 </html>
