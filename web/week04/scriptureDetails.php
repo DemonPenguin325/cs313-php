@@ -34,7 +34,6 @@
                 $stmt->bindValue(':id', htmlspecialchars($_GET['id']), PDO::PARAM_STR);
                 $stmt->execute();
                 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                echo '<p>Your requested data:</p>';
                 //print_r($rows);
                 foreach ($rows as $key => $value)
                 {
