@@ -22,7 +22,7 @@ function setClass(name){
 		if (req.readyState == 4 && req.status == 200){
             console.log(req.responseText);
             var info = JSON.parse(req.responseText);
-            document.getElementById("class-info").innerHTML = info.race;
+            document.getElementById("class-info").innerHTML = info.class;
         }
     }
     req.open("GET", url, true);
