@@ -2,9 +2,9 @@
     // Code here to return the contents of race, class, and stats info
     include 'init_database.php';
 
-    $race_data = "";
-    $class_data = "";
-    $stat_data = "";
+    $race_data = "DEFAULT";
+    $class_data = "DEFAULT";
+    $stat_data = "DEFAULT";
 
     if (isset($_GET['race'])){
         $stmt = $db->prepare('SELECT race_name, race_description FROM public.race WHERE race_name = :name');
