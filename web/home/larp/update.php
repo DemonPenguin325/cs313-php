@@ -7,7 +7,7 @@
     $stat_data = "DEFAULT";
 
     if (isset($_GET['race'])){
-        $stmt = $db->prepare('SELECT race_name, race_description FROM public.race WHERE race_name = :name');
+        $stmt = $db->prepare('SELECT * FROM public.race WHERE race_name = :name');
         $stmt->bindValue(':name', htmlspecialchars($_GET['race']), PDO::PARAM_STR);
         $stmt->execute();
         $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -16,7 +16,7 @@
         $race_data = "<p class='box-subtitle'>".$name.": ".$desc."</p>";
     }
     if (isset($_GET['class'])){
-        $stmt = $db->prepare('SELECT race_name, race_description FROM public.race WHERE race_name = :name');
+        $stmt = $db->prepare('SELECT * FROM public.class WHERE class_name = :name');
         $stmt->bindValue(':name', htmlspecialchars($_GET['race']), PDO::PARAM_STR);
         $stmt->execute();
         $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
