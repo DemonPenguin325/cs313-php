@@ -3,7 +3,7 @@
         include 'init_database.php';
         $stmt = $db->prepare("SELECT * FROM public.user WHERE user_name = :name AND user_password = crypt(:pass, user_password);");
         $stmt->bindValue(':name', htmlspecialchars($_POST['username']), PDO::PARAM_STR);
-        $stmt->bindValue(':name', htmlspecialchars($_POST['password']), PDO::PARAM_STR);
+        $stmt->bindValue(':pass', htmlspecialchars($_POST['password']), PDO::PARAM_STR);
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         if (sizeof(rows) < 1){
