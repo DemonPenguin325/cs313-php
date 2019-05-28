@@ -1,27 +1,3 @@
-<?php
-    if (isset($_POST['username']) && isset($_POST['password'])){
-        include 'init_database.php';
-        $stmt = $db->prepare("SELECT * FROM public.user WHERE user_name = :name AND user_password = crypt(:pass, user_password);");
-        $stmt->bindValue(':name', htmlspecialchars($_POST['username']), PDO::PARAM_STR);
-        $stmt->bindValue(':pass', htmlspecialchars($_POST['password']), PDO::PARAM_STR);
-        $stmt->execute();
-        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        if (sizeof(rows) < 1){
-            // invalid credentials
-        }
-        else{
-            //session_start();
-            foreach ($rows as $key => $value){
-                if ($value['is_admin']){
-                    $_SESSION['is_admin'] = true;
-                }
-                $_SESSION['username'] = $value['user_name'];
-            }
-            header('Location: index.php');
-        }
-    }
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,5 +27,28 @@
             <input type="submit" value="Log In" class="btn-success">
         </div>
     </form>
+    <?php
+    if (isset($_POST['username']) && isset($_POST['password'])){
+        include 'init_database.php';
+        $stmt = $db->prepare("SELECT * FROM public.user WHERE user_name = :name AND user_password = crypt(:pass, user_password);");
+        $stmt->bindValue(':name', htmlspecialchars($_POST['username']), PDO::PARAM_STR);
+        $stmt->bindValue(':pass', htmlspecialchars($_POST['password']), PDO::PARAM_STR);
+        $stmt->execute();
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if (sizeof(rows) < 1){
+            // invalid credentials
+        }
+        else{
+            //session_start();
+            foreach ($rows as $key => $value){
+                if ($value['is_admin']){
+                    $_SESSION['is_admin'] = true;
+                }
+                $_SESSION['username'] = $value['user_name'];
+            }
+            header('Location: index.php');
+        }
+    }
+?>
 </body>
 </html>
