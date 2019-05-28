@@ -47,7 +47,21 @@ body{
   .box-subtitle{
       font-size: 2em;
   }
-  
+  .box-content{
+    margin: auto;
+    padding-right: 20%;
+    padding-left: 20%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    width: 60%;
+  }
+  form{
+    margin-right: 10%;
+    margin-left: 10%;
+  }
+  .form-field{
+    color: black;
+  }
   /* Style page content */
   .main {
     margin-right: 160px; /* Same as the width of the sidebar */
