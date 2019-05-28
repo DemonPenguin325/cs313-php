@@ -37,8 +37,10 @@
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         if (sizeof(rows) < 1){
             // invalid credentials
+            echo '<p>invalid credentials</p>';
         }
         else{
+            echo '<p>invalid credentials</p>';
             //session_start();
             foreach ($rows as $key => $value){
                 if ($value['is_admin']){
