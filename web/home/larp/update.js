@@ -28,3 +28,11 @@ function setClass(name){
     req.open("GET", url, true);
 	req.send();
 }
+
+function addEditFields(kind){
+    var fieldArea = document.getElementById("editFields");
+
+    if (kind == "race"){
+        
+    }
+}
