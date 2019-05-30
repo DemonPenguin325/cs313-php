@@ -38,7 +38,7 @@
             <form action="edit.php" method="post" class="box">
                 <div class="box-content">
                     <label>Item to edit: </label>
-                    <select name="item-to-edit">
+                    <select name="item-to-edit" class="form-field">
                         <optgroup label="Races">
                             <?php
                                 $stmt = $db->prepare('SELECT race_name FROM public.race');
@@ -46,7 +46,7 @@
                                 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 foreach ($rows as $key => $value){
                                     $name = $value['race_name'];
-                                    echo '<option class="form-field" value="'.$name.'">'.ucfirst($name).'</option>';
+                                    echo '<option value="'.$name.'">'.ucfirst($name).'</option>';
                                 }
                             ?>
                         </optgroup>
@@ -59,7 +59,7 @@
                             foreach ($rows as $key => $value){
                                 $name = $value['class_name'];
                                 print($name);
-                                echo '<option class="form-field" value="'.$name.'">'.ucfirst($name).'</option>';
+                                echo '<option value="'.$name.'">'.ucfirst($name).'</option>';
                             }
                             ?>
                         </optgroup>
