@@ -46,7 +46,7 @@
                                 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 foreach ($rows as $key => $value){
                                     $name = $rows['race_name'];
-                                    echo '<option label="'.$name.'">'.ucfirst($name).'</option>';
+                                    echo '<option value="'.$name.'">'.ucfirst($name).'</option>';
                                 }
                             ?>
                         </optgroup>
@@ -58,7 +58,7 @@
                             foreach ($rows as $key => $value){
                                 $name = $rows['class_name'];
                                 print_r($name);
-                                echo '<option label="'.$name.'">'.ucfirst($name).'</option>';
+                                echo '<option value="'.$name.'">'.ucfirst($name).'</option>';
                             }
                             ?>
                         </optgroup>
