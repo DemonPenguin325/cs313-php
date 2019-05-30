@@ -41,11 +41,11 @@
                     <select name="item-to-edit">
                         <optgroup label="Races">
                             <?php
-                                $stmt = $db->prepare("SELECT race_name FROM public.race");
+                                $stmt = $db->prepare('SELECT race_name FROM public.race');
                                 $stmt->execute();
                                 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 foreach ($rows as $key => $value){
-                                    $name = $rows['race_name'];
+                                    $name = $value['race_name'];
                                     echo '<option value="'.$name.'">'.ucfirst($name).'</option>';
                                 }
                             ?>
@@ -53,11 +53,11 @@
                         <optgroup label="Classes">
                         <?php
                             include 'init_database.php';
-                            $stmt = $db->prepare("SELECT class_name FROM public.class");
+                            $stmt = $db->prepare('SELECT class_name FROM public.class');
                             $stmt->execute();
                             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             foreach ($rows as $key => $value){
-                                $name = $rows['class_name'];
+                                $name = $value['class_name'];
                                 print($name);
                                 echo '<option value="'.$name.'">'.ucfirst($name).'</option>';
                             }
