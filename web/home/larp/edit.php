@@ -52,12 +52,13 @@
                         </optgroup>
                         <optgroup label="Classes">
                         <?php
+                            include 'init_database.php';
                             $stmt = $db->prepare("SELECT class_name FROM public.class");
                             $stmt->execute();
                             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             foreach ($rows as $key => $value){
                                 $name = $rows['class_name'];
-                                print_r($name);
+                                print($name);
                                 echo '<option value="'.$name.'">'.ucfirst($name).'</option>';
                             }
                             ?>
