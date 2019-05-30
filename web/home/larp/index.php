@@ -19,7 +19,7 @@
 <body>
     <header>
         <?php
-            include 'nav.php'
+            include 'nav.php';
         ?>
     </header>
     <!-- Side navigation -->

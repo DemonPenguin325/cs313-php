@@ -20,6 +20,9 @@
                 if ($value['is_admin']){
                     $_SESSION['is_admin'] = true;
                 }
+                else{
+                    $_SESSION['is_admin'] = false;
+                }
                 $_SESSION['username'] = $value['user_name'];
                 $_SESSION['authenticated'] = true;
             }

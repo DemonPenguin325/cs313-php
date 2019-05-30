@@ -59,6 +59,10 @@ body{
     margin-right: 10%;
     margin-left: 10%;
   }
+  .form-text{
+    text-align: center;
+    color: whitesmoke;
+  }
   .form-field{
     color: black;
   }
