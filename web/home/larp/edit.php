@@ -98,7 +98,7 @@
             <form action="edit.php" method="post" class="box">
                 <div class="box-content">
                     <label>Item to edit: </label>
-                    <select name="item-to-edit" class="form-field">
+                    <select name="item-to-delete" id="item-to-delete" class="form-field">
                         <optgroup label="Races">
                             <?php
                                 $stmt = $db->prepare('SELECT race_name FROM public.race');
