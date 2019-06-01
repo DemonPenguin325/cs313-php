@@ -30,7 +30,7 @@ function setClass(name){
 }
 
 function addEditFields(){
-    var fieldArea = document.getElementById("editFields");
+    var fieldArea = document.getElementById("addFields");
     var kind = document.getElementById("addSelector").value;
     var output = "";
     if (kind == "race"){
