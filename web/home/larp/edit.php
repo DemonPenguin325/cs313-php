@@ -79,12 +79,14 @@
             <form action="edit.php" method="post" class="box">
                 <div class="box-content">
                     <label>Type of addition: </label>
-                    <select>
+                    <select class="form-field" id="addSelector" onchange="addEditFields()">
                             <option value="race">Race</option>
                             <option value="class">Class</option>
                             <option value="rule">Rule</option>
                     </select>
                     <div id="addFields">
+                            <label></label>
+                            <input type="text" name="name">
                     </div>
                     <input type="submit" value="Submit" class="btn-success">
                 </div>
