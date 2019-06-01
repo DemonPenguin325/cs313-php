@@ -92,7 +92,7 @@
                 </div>
             </form>
         </div>
-        <div id="delete" class="tab-pane fade">
+        <div id="delete" class="tab-pane fade" onsubmit="return doubleCheck()">
             <h3 class="form-text">Delete</h3>
             <p class="form-text">Delete a pre-existing race, class, or rule</p>
             <form action="edit.php" method="post" class="box">

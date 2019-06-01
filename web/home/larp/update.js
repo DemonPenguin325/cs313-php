@@ -52,3 +52,7 @@ function addEditFields(){
     }
     fieldArea.innerHTML = output;
 }
+
+function doubleCheck(){
+    return confirm("Are you sure you want to DELETE \"" + document.getElementById().value + "\"? It will be gone forever! (A very long time)" );
+}
