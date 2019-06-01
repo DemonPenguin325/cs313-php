@@ -47,5 +47,8 @@ function addEditFields(){
         output += '<label>Type: </label><input type="text" name="type"><br>';
         output += '<label>Description: </label><input type="text" name="description" required><br>';
     }
+    else{
+        console.log(kind);
+    }
     fieldArea.innerHTML = output;
 }
