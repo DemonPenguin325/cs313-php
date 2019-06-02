@@ -5,7 +5,8 @@
     $value = $data[1];
 
     // This won't catch all things because it doesn't take into account depenencies.
-    $stmt = $db->prepare('DELETE FROM public.'.$name.' WHERE '.$name.'_name = '.$value);
+    $stmt = $db->prepare('DELETE FROM public.'.$name.' WHERE '.$name.'_name = :value');
+    $stmt->bindValue(':value', $value, PDO::PARAM_STR);
     $stmt->execute();
 
     // Redirect back to edit page

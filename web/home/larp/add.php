@@ -21,7 +21,12 @@
         $arg_string = "(class_name, class_hp, class_rules, class_type, class_description)";
     }
 
-    $stmt = $db->prepare('INSERT INTO public.'.$type.' '.$arg_string.' VALUES ('.$name.', '.$hp.', '.$rules.', '.$special.', '.$description.')');
+    $stmt = $db->prepare('INSERT INTO public.'.$type.' '.$arg_string.' VALUES (:name, :hp, :rule, :special, :desc)');
+    $stmt->bindValue(':name', $name, PDO::PARAM_STR);
+    $stmt->bindValue(':hp', $hp, PDO::PARAM_STR);
+    $stmt->bindValue(':rule', $rules, PDO::PARAM_STR);
+    $stmt->bindValue(':special', $special, PDO::PARAM_STR);
+    $stmt->bindValue(':desc', $description, PDO::PARAM_STR);
     $stmt->execute();
 
     // Redirect back to edit page
