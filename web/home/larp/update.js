@@ -34,18 +34,18 @@ function addEditFields(){
     var kind = document.getElementById("addSelector").value;
     var output = "";
     if (kind == "race"){
-        output += '<label>Name: </label><input type="text" name="name" required><br>';
-        output += '<label>Base HP: </label><input type="number" name="hp"><br>';
-        output += '<label>Special Rules: </label><input type="text" name="rules"><br>';
-        output += '<label>Magic Rules: </label><input type="text" name="magic_rules"><br>';
-        output += '<label>Description: </label><input type="text" name="description" required><br>';
+        output += '<label>Name: </label><input type="text" name="name" class="form-field" required><br>';
+        output += '<label>Base HP: </label><input type="number" name="hp" class="form-field"><br>';
+        output += '<label>Special Rules: </label><input type="text" name="rules" class="form-field"><br>';
+        output += '<label>Magic Rules: </label><input type="text" name="magic_rules" class="form-field"><br>';
+        output += '<label>Description: </label><input type="text" name="description" class="form-field" required><br>';
     }
     else if (kind == "class"){
-        output += '<label>Name: </label><input type="text" name="name" required><br>';
-        output += '<label>Bounus HP: </label><input type="number" name="hp"><br>';
-        output += '<label>Special Rules: </label><input type="text" name="rules"><br>';
-        output += '<label>Type: </label><input type="text" name="type"><br>';
-        output += '<label>Description: </label><input type="text" name="description" required><br>';
+        output += '<label>Name: </label><input type="text" name="name" class="form-field" required><br>';
+        output += '<label>Bounus HP: </label><input type="number" name="hp" class="form-field"><br>';
+        output += '<label>Special Rules: </label><input type="text" name="rules" class="form-field"><br>';
+        output += '<label>Type: </label><input type="text" name="type" class="form-field"><br>';
+        output += '<label>Description: </label><input type="text" name="description" class="form-field" required><br>';
     }
     else{
         console.log(kind);

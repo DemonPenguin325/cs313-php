@@ -80,7 +80,7 @@
         <div id="add" class="tab-pane fade">
             <h3 class="form-text">Add</h3>
             <p class="form-text">Add a new race, class, or rule</p>
-            <form action="edit.php" method="post" class="box">
+            <form action="add.php" method="post" class="box">
                 <div class="box-content">
                     <label>Type of addition: </label>
                     <select class="form-field" name="item-to-add" id="addSelector" onchange="addEditFields()">
@@ -97,7 +97,7 @@
         <div id="delete" class="tab-pane fade" onsubmit="return doubleCheck()">
             <h3 class="form-text">Delete</h3>
             <p class="form-text">Delete a pre-existing race, class, or rule</p>
-            <form action="edit.php" method="post" class="box">
+            <form action="delete.php" method="post" class="box">
                 <div class="box-content">
                     <label>Item to delete: </label>
                     <select name="item-to-delete" id="item-to-delete" class="form-field">
