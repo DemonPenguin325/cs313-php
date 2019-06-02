@@ -66,6 +66,10 @@ body{
   .form-field{
     color: black;
   }
+  p.message{
+    text-align: center;
+    color: red;
+  }
   /* Style page content */
   .main {
     margin-right: 160px; /* Same as the width of the sidebar */

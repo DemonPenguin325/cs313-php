@@ -25,7 +25,11 @@
             include 'init_database.php';
         ?>
     </header>
-
+    <?php
+        if ($_GET['update'] == true){
+            echo '<p class="message">Your changes were made successfully!</p>';
+        }
+    ?>
     <ul class="nav nav-pills nav-justified">
         <li class="active"><a data-toggle="pill" href="#edit">Edit</a></li>
         <li><a data-toggle="pill" href="#add">Add</a></li>
@@ -79,14 +83,12 @@
             <form action="edit.php" method="post" class="box">
                 <div class="box-content">
                     <label>Type of addition: </label>
-                    <select class="form-field" id="addSelector" onchange="addEditFields()">
+                    <select class="form-field" name="item-to-add" id="addSelector" onchange="addEditFields()">
                             <option value="race">Race</option>
                             <option value="class">Class</option>
                             <option value="rule">Rule</option>
                     </select>
                     <div id="addFields">
-                            <label></label>
-                            <input type="text" name="name">
                     </div>
                     <input type="submit" value="Submit" class="btn-success">
                 </div>
@@ -97,7 +99,7 @@
             <p class="form-text">Delete a pre-existing race, class, or rule</p>
             <form action="edit.php" method="post" class="box">
                 <div class="box-content">
-                    <label>Item to edit: </label>
+                    <label>Item to delete: </label>
                     <select name="item-to-delete" id="item-to-delete" class="form-field">
                         <optgroup label="Races">
                             <?php
@@ -106,7 +108,7 @@
                                 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 foreach ($rows as $key => $value){
                                     $name = $value['race_name'];
-                                    echo '<option value="'.$name.'">'.ucfirst($name).'</option>';
+                                    echo '<option value="race;'.$name.'">'.ucfirst($name).'</option>';
                                 }
                             ?>
                         </optgroup>
@@ -119,7 +121,7 @@
                             foreach ($rows as $key => $value){
                                 $name = $value['class_name'];
                                 print($name);
-                                echo '<option value="'.$name.'">'.ucfirst($name).'</option>';
+                                echo '<option value=class;"'.$name.'">'.ucfirst($name).'</option>';
                             }
                             ?>
                         </optgroup>
