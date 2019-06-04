@@ -3,6 +3,7 @@
     if (isset($_POST['username'])){
         $errorFlag = false;
         $valid = true;
+        $errorMessage = "";
         if ($_POST['password'] != $_POST['password2']){
             $valid = false;
             $errorMesssage = "Your passwords don't match";
