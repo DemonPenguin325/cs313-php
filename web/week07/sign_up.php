@@ -6,17 +6,17 @@
         $errorMessage = "";
         if ($_POST['password'] != $_POST['password2']){
             $valid = false;
-            $errorMesssage = "Your passwords don't match";
+            $errorMessage = "Your passwords don't match";
             $errorFlag = true;
         }
         if (1 !== preg_match('~[0-9]~', $_POST['password'])){
             $valid = false;
-            $errorMesssage = "Your password needs to have at least 1 number!";
+            $errorMessage = "Your password needs to have at least 1 number!";
             $errorFlag = true;
         }
         if (1 !== preg_match('.{7,}')){
             $valid = false;
-            $errorMesssage = "Your password needs to be at least 7 characters long!";
+            $errorMessage = "Your password needs to be at least 7 characters long!";
             $errorFlag = true;
         }
         if ($valid){
