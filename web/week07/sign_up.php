@@ -1,18 +1,22 @@
 <?php
     session_start();
     if (isset($_POST['username'])){
+        $errorFlag = false;
         $valid = true;
         if ($_POST['password'] != $_POST['password2']){
             $valid = false;
             $errorMesssage = "Your passwords don't match";
+            $errorFlag = true;
         }
         if (1 !== preg_match('~[0-9]~', $_POST['password'])){
             $valid = false;
             $errorMesssage = "Your password needs to have at least 1 number!";
+            $errorFlag = true;
         }
         if (1 !== preg_match('.{7,}')){
             $valid = false;
             $errorMesssage = "Your password needs to be at least 7 characters long!";
+            $errorFlag = true;
         }
         if ($valid){
             // We are creating new user
@@ -36,13 +40,16 @@
     <title>Sign Up</title>
 </head>
 <body>
+    <?php
+        if (!$valid){echo '<p style="color: red;">'.$errorMessage.'</p>';}
+    ?>
     <form action="sign_up.php" method="post">
-        <label for="">Username: </label>
+<label for="">Username: </label>
         <input type="text" name="username" id=""><br>
         <label for="">Password: </label>
-        <input type="password" name="password" id=""><br>
+        <input type="password" name="password" id=""><div style="color: red;"><?php if ($errorFlag) { ?> * <?php } ?> </div><br>
         <label for="">Enter Password Again: </label>
-        <input type="password" name="password2" id=""><br>
+        <input type="password" name="password2" id=""><div style="color: red;"><?php if ($errorFlag) { ?> * <?php } ?> </div><br>
         <input type="submit" value="Submit">
     </form>
 </body>
