@@ -5,7 +5,7 @@
         include '../home/larp/init_database.php';
         $stmt = $db->prepare('INSERT INTO t7user (username, pwHash) VALUES (:user, :pass)');
         $stmt->bindValue(':user', htmlspecialchars($_POST['username']), PDO::PARAM_STR);
-        $stmt->bindValue(':pass', password_hash($_POST['password']), PDO::PARAM_STR);
+        $stmt->bindValue(':pass', password_hash($_POST['password'], PASSWORD_DEFAULT), PDO::PARAM_STR);
         $stmt->execute();
         header('Location: sign_in.php');
         die();
