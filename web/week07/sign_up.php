@@ -1,14 +1,29 @@
 <?php
     session_start();
     if (isset($_POST['username'])){
-        // We are creating new user
-        include '../home/larp/init_database.php';
-        $stmt = $db->prepare('INSERT INTO t7user (username, pwHash) VALUES (:user, :pass)');
-        $stmt->bindValue(':user', htmlspecialchars($_POST['username']), PDO::PARAM_STR);
-        $stmt->bindValue(':pass', password_hash($_POST['password'], PASSWORD_DEFAULT), PDO::PARAM_STR);
-        $stmt->execute();
-        header('Location: sign_in.php');
-        die();
+        $valid = true;
+        if ($_POST['password'] != $_POST['password2']){
+            $valid = false;
+            $errorMesssage = "Your passwords don't match";
+        }
+        if (1 !== preg_match('~[0-9]~', $_POST['password'])){
+            $valid = false;
+            $errorMesssage = "Your password needs to have at least 1 number!";
+        }
+        if (1 !== preg_match('.{7,}')){
+            $valid = false;
+            $errorMesssage = "Your password needs to be at least 7 characters long!";
+        }
+        if ($valid){
+            // We are creating new user
+            include '../home/larp/init_database.php';
+            $stmt = $db->prepare('INSERT INTO t7user (username, pwHash) VALUES (:user, :pass)');
+            $stmt->bindValue(':user', htmlspecialchars($_POST['username']), PDO::PARAM_STR);
+            $stmt->bindValue(':pass', password_hash($_POST['password'], PASSWORD_DEFAULT), PDO::PARAM_STR);
+            $stmt->execute();
+            header('Location: sign_in.php');
+            die();
+        }
     }
 ?>
 
@@ -26,6 +41,8 @@
         <input type="text" name="username" id=""><br>
         <label for="">Password: </label>
         <input type="password" name="password" id=""><br>
+        <label for="">Enter Password Again: </label>
+        <input type="password" name="password2" id=""><br>
         <input type="submit" value="Submit">
     </form>
 </body>
