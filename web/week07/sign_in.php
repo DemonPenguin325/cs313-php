@@ -3,12 +3,11 @@
     if (isset($_POST['username'])){
         // attempt to log in
         include '../home/larp/init_database.php';
-        $stmt = $db->prepare('SELECT * FROM t7user WHERE username = :user AND pwHash = :pass');
+        $stmt = $db->prepare('SELECT username, pwHash FROM t7user WHERE username = :user');
         $stmt->bindValue(':user', htmlspecialchars($_POST['username']), PDO::PARAM_STR);
-        $stmt->bindValue(':pass', password_hash($_POST['password']), PDO::PARAM_STR);
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        if (sizeof($rows) == 1){
+        if (sizeof($rows) == 1 && password_verify($_POST['password'], $rows[0]['pwHash'])){
             $_SESSION['logged_in'] = true;
             $_SESSION['username'] = $rows[0]['username'];
             header('Location: welcome.php');
