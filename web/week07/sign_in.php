@@ -7,6 +7,7 @@
         $stmt->bindValue(':user', htmlspecialchars($_POST['username']), PDO::PARAM_STR);
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        echo var_dump($rows);
         if (sizeof($rows) == 1 && password_verify($_POST['password'], $rows[0]['pwHash'])){
             $_SESSION['logged_in'] = true;
             $_SESSION['username'] = $rows[0]['username'];
