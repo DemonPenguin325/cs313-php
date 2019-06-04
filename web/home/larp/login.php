@@ -9,7 +9,7 @@
         $stmt->bindValue(':pass', htmlspecialchars($_POST['password']), PDO::PARAM_STR);
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        if (sizeof(rows) < 1){
+        if (sizeof($rows) < 1){
             // invalid credentials
             //echo '<p>invalid credentials</p>';
         }
