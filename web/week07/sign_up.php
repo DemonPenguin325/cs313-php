@@ -14,7 +14,7 @@
             $errorMessage = "Your password needs to have at least 1 number!";
             $errorFlag = true;
         }
-        if (strlen($_POST['password']) >= 7){
+        if (strlen($_POST['password']) <= 7){
             $valid = false;
             $errorMessage = "Your password needs to be at least 7 characters long!";
             $errorFlag = true;
