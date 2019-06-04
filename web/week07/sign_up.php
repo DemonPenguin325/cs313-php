@@ -9,12 +9,12 @@
             $errorMessage = "Your passwords don't match";
             $errorFlag = true;
         }
-        if (1 !== preg_match('~[0-9]~', $_POST['password'])){
+        if (1 != preg_match('~[0-9]~', $_POST['password'])){
             $valid = false;
             $errorMessage = "Your password needs to have at least 1 number!";
             $errorFlag = true;
         }
-        if (1 !== preg_match('.{7,}')){
+        if (1 != preg_match('.{7,}')){
             $valid = false;
             $errorMessage = "Your password needs to be at least 7 characters long!";
             $errorFlag = true;
