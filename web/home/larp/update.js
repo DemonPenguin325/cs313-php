@@ -25,7 +25,7 @@ function setClass(name){
             document.getElementById("class-info").innerHTML = info.class;
         }
     }
-    
+
     req.open("GET", url, true);
 	req.send();
 }
@@ -77,7 +77,6 @@ function addAdditionFields(){
 function addEditFields(kind, info){
     var fieldArea = document.getElementById("editFields");
     var output = "";
-    getInfo(kind, something);
     if (kind == "race"){
         output += '<label>Name: </label><input type="text" name="name" class="form-field" value="' + info.race_name + '" required><br>';
         output += '<label>Base HP: </label><input type="number" name="hp" class="form-field" value="' + info.race_hp + '"><br>';
