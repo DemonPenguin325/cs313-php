@@ -25,6 +25,7 @@ function setClass(name){
             document.getElementById("class-info").innerHTML = info.class;
         }
     }
+    
     req.open("GET", url, true);
 	req.send();
 }
