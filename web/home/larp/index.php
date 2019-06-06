@@ -79,21 +79,18 @@
             <div class="col-sm-3 box">
                 <h2 class="box-title">Race</h2>
                 <div id="race-info">
-                    <p class="box-subtitle">Human: </p>
                 </div>
             </div>
             <div class="col-sm-1"></div> <!-- Buffer -->
             <div class="col-sm-3 box">
                 <h2 class="box-title">Class</h2>
                 <div id="class-info">
-                    <p class="box-subtitle">Knight: </p>
                 </div>
             </div>
             <div class="col-sm-1"></div> <!-- Buffer -->
             <div class="col-sm-3 box">
                 <h2 class="box-title">Stats</h2>
                 <div id="stats-info">
-                    <p class="box-subtitle">Info: </p>
                 </div>
             </div>
             <!-- Covers the space for the side bar. Leave empty -->
