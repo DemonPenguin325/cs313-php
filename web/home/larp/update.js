@@ -28,7 +28,7 @@ function setClass(name){
     req.open("GET", url, true);
 	req.send();
 }
-function getEditInfo(kind, name){
+function getEditInfo(){
     var value = document.getElementById("editSelector").value;
     value = value.split(';');
     var kind = value[0];
