@@ -14,7 +14,7 @@
         foreach ($rows as $key => $value){
             $name = $value['race_name'];
             $desc = $value['race_description'];
-            $race_data = "<p class='box-subtitle'>".$name.": </p><p class='box-text'>Description: ".$desc."</p>";
+            $race_data = "<p class='box-subtitle'>".ucfirst($name).": </p><p class='box-text'>Description: ".$desc."</p>";
         }
     }
     if (isset($_GET['class'])){
@@ -25,7 +25,7 @@
         foreach ($rows as $key => $value){
             $name = $value['class_name'];
             $desc = $value['class_description'];
-            $class_data = "<p class='box-subtitle'>".$name.": ".$desc."</p>";
+            $class_data = "<p class='box-subtitle'>".ucfirst($name).": ".$desc."</p>";
         }
     }
     if (isset($_GET['stat'])){
@@ -41,5 +41,6 @@
         $stat_data = "<p class='box-subtitle'>".$name.": ".$desc."</p>";*/
     }
 
+    // json return
     echo '{"race":"'.$race_data.'","class":"'.$class_data.'","stats":"'.$stat_data.'"}';
 ?>
