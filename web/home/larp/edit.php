@@ -1,8 +1,8 @@
 <?php
     session_start();
-    /*if ($_SESSION['is_admin'] != true){
+    if ($_SESSION['is_admin'] != true){
         header('Location: login.php');
-    }*/
+    }
 ?>
 
 <!DOCTYPE html>
