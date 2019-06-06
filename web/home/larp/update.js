@@ -63,7 +63,7 @@ function addAdditionFields(){
     }
     else if (kind == "class"){
         output += '<label>Name: </label><input type="text" name="name" class="form-field" required><br>';
-        output += '<label>Bounus HP: </label><input type="number" name="hp" class="form-field"><br>';
+        output += '<label>Bonus HP: </label><input type="number" name="hp" class="form-field"><br>';
         output += '<label>Special Rules: </label><input type="text" name="rules" class="form-field"><br>';
         output += '<label>Type: </label><input type="text" name="type" class="form-field"><br>';
         output += '<label>Description: </label><input type="text" name="description" class="form-field" required><br>';
@@ -86,7 +86,7 @@ function addEditFields(kind, info){
     }
     else if (kind == "class"){
         output += '<label>Name: </label><input type="text" name="name" class="form-field" value="' + info.class_name + '" required><br>';
-        output += '<label>Bounus HP: </label><input type="number" name="hp" class="form-field" value="' + (info.class_hp == null ? info.class_hp : 0) + '"><br>';
+        output += '<label>Bonus HP: </label><input type="number" name="hp" class="form-field" value="' + (info.class_hp == null ? info.class_hp : 0) + '"><br>';
         output += '<label>Special Rules: </label><input type="text" name="rules" class="form-field" value="' + info.class_rules + '"><br>';
         output += '<label>Type: </label><input type="text" name="type" class="form-field" value="' + info.class_type + '"><br>';
         output += '<label>Description: </label><input type="text" name="description" class="form-field" value="' + info.class_description + '" required><br>';
