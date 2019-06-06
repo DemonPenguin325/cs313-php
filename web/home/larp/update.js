@@ -79,14 +79,14 @@ function addEditFields(kind, info){
     var output = "";
     if (kind == "race"){
         output += '<label>Name: </label><input type="text" name="name" class="form-field" value="' + info.race_name + '" required><br>';
-        output += '<label>Base HP: </label><input type="number" name="hp" class="form-field" value="' + info.race_hp + '"><br>';
+        output += '<label>Base HP: </label><input type="number" name="hp" class="form-field" value="' + (info.race_hp == null ? info.race_hp : 5) + '"><br>';
         output += '<label>Special Rules: </label><input type="text" name="rules" class="form-field" value="' + info.race_rules + '"><br>';
         output += '<label>Magic Rules: </label><input type="text" name="magic_rules" class="form-field" value="' + info.race_magic_rule + '"><br>';
         output += '<label>Description: </label><input type="text" name="description" class="form-field" value="' + info.race_description + '" required><br>';
     }
     else if (kind == "class"){
         output += '<label>Name: </label><input type="text" name="name" class="form-field" value="' + info.class_name + '" required><br>';
-        output += '<label>Bounus HP: </label><input type="number" name="hp" class="form-field" value="' + info.class_hp + '"><br>';
+        output += '<label>Bounus HP: </label><input type="number" name="hp" class="form-field" value="' + (info.class_hp == null ? info.class_hp : 0) + '"><br>';
         output += '<label>Special Rules: </label><input type="text" name="rules" class="form-field" value="' + info.class_rules + '"><br>';
         output += '<label>Type: </label><input type="text" name="type" class="form-field" value="' + info.class_type + '"><br>';
         output += '<label>Description: </label><input type="text" name="description" class="form-field" value="' + info.class_description + '" required><br>';
