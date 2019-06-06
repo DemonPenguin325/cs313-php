@@ -28,17 +28,39 @@
         <div class="dropdown">
             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Race <span class="caret"></span></button>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#" onclick="addRace('human')">Human</a></li>
+                <?php
+                    include 'init_database.php';
+
+                    $stmt = $db->prepare('SELECT race_name FROM public.race');
+                    $stmt->execute();
+                    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                    foreach ($rows as $key => $value){
+                        $name = $value['race_name'];
+                        echo '<li><a class="dropdown-item" href="#" onclick="addRace(\''.$name.'\')">'.ucfirst($name).'</a></li>';
+                    }
+                ?>
+                <!--<li><a class="dropdown-item" href="#" onclick="addRace('human')">Human</a></li>
                 <li><a class="dropdown-item" href="#" onclick="addRace('elf')">Elf</a></li>
-                <li><a class="dropdown-item" href="#" onclick="addRace('skeleton/ghost')">Undead</a></li>
+                <li><a class="dropdown-item" href="#" onclick="addRace('skeleton/ghost')">Undead</a></li> -->
             </ul>
         </div>
         <div class="dropdown">
             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Class <span class="caret"></span></button>
             <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#" onclick="setClass('knight')">Knight</a></li>
+                <?php
+                    $stmt = $db->prepare('SELECT class_name FROM public.class');
+                    $stmt->execute();
+                    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                    foreach ($rows as $key => $value){
+                        $name = $value['class_name'];
+                        echo '<li><a class="dropdown-item" href="#" onclick="setClass(\''.$name.'\')">'.ucfirst($name).'</a></li>';
+                    }
+                ?>
+
+
+            <!--<li><a class="dropdown-item" href="#" onclick="setClass('knight')">Knight</a></li>
             <li><a class="dropdown-item" href="#" onclick="setClass('paladin')">Paladin</a></li>
-            <li><a class="dropdown-item" href="#" onclick="setClass('bard')">Bard</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setClass('bard')">Bard</a></li> -->
             </ul>
         </div>
         <div class="dropdown">
