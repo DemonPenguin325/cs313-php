@@ -40,10 +40,10 @@
         <div id="edit" class="tab-pane fade in active">
             <h3 class="form-text">Edit</h3>
             <p class="form-text">Change the attributes of an existing race, class, or rule</p>
-            <form action="edit.php" method="post" class="box">
+            <form action="updateInfo.php" method="post" class="box">
                 <div class="box-content">
                     <label>Item to edit: </label>
-                    <select name="item-to-edit" class="form-field">
+                    <select name="item-to-edit" class="form-field" id="editSelector" onchange="getEditInfo()">
                         <optgroup label="Races">
                             <?php
                                 $stmt = $db->prepare('SELECT race_name FROM public.race');
@@ -51,7 +51,7 @@
                                 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 foreach ($rows as $key => $value){
                                     $name = $value['race_name'];
-                                    echo '<option value="'.$name.'">'.ucfirst($name).'</option>';
+                                    echo '<option value="race;'.$name.'">'.ucfirst($name).'</option>';
                                 }
                             ?>
                         </optgroup>
@@ -62,8 +62,8 @@
                             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             foreach ($rows as $key => $value){
                                 $name = $value['class_name'];
-                                print($name);
-                                echo '<option value="'.$name.'">'.ucfirst($name).'</option>';
+                                //print($name);
+                                echo '<option value="class;'.$name.'">'.ucfirst($name).'</option>';
                             }
                             ?>
                         </optgroup>
@@ -83,7 +83,7 @@
             <form action="add.php" method="post" class="box">
                 <div class="box-content">
                     <label>Type of addition: </label>
-                    <select class="form-field" name="item-to-add" id="addSelector" onchange="addEditFields()">
+                    <select class="form-field" name="item-to-add" id="addSelector" onchange="addAdditionFields()">
                             <option value="race">Race</option>
                             <option value="class">Class</option>
                             <option value="rule">Rule</option>

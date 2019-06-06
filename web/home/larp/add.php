@@ -3,7 +3,7 @@
     $type = $_POST['item-to-add'];
     $name = htmlspecialchars($_POST['name']);
     $hp = htmlspecialchars($_POST['hp']);
-    $rules = htmlspecialchars($_POST['name']);
+    $rules = htmlspecialchars($_POST['rules']);
     $description = htmlspecialchars($_POST['description']);
     $special = "";
     if ($type == "race"){
