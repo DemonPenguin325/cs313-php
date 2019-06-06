@@ -14,7 +14,7 @@
         foreach ($rows as $key => $value){
             $name = $value['race_name'];
             $desc = $value['race_description'];
-            $race_data = "<p class='box-subtitle'>".$name.": ".$desc."</p>";
+            $race_data = "<p class='box-subtitle'>".$name.": </p><p class='box-text'".$desc."</p>";
         }
     }
     if (isset($_GET['class'])){

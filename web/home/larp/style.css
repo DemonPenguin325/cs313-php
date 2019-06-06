@@ -45,7 +45,10 @@ body{
       text-align: center;
   }
   .box-subtitle{
-      font-size: 2em;
+      font-size: 24px;
+  }
+  .box-text{
+    font-size: 14px;
   }
   .box-content{
     margin: auto;
