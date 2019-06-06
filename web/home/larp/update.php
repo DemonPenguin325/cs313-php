@@ -14,7 +14,10 @@
         foreach ($rows as $key => $value){
             $name = $value['race_name'];
             $desc = $value['race_description'];
-            $race_data = "<p class='box-subtitle'>".ucfirst($name).": </p><p class='box-text'>Description: ".$desc."</p>";
+            $race_data = "<p class='box-subtitle'>".ucfirst($name).": </p>";
+            $race_data .= "<p class='box-text'>Description: ".$desc."</p>";
+            $race_data .= "<p class='box-text'>Base HP: ".(isset($value['race_hp']) ? $value['race_hp'] : 5)."</p>";
+            $race_data .= "<p class='box-text'>Abilities: ".(isset($value['race_rules']) ? $value['race_hp'] : "None")."</p>";
         }
     }
     if (isset($_GET['class'])){
@@ -25,7 +28,10 @@
         foreach ($rows as $key => $value){
             $name = $value['class_name'];
             $desc = $value['class_description'];
-            $class_data = "<p class='box-subtitle'>".ucfirst($name).": ".$desc."</p>";
+            $class_data = "<p class='box-subtitle'>".ucfirst($name).": </p>";
+            $class_data .= "<p class='box-text'>Description: ".$desc."</p>";
+            $class_data .= "<p class='box-text'>Bounus HP: ".(isset($value['class_hp']) ? $value['class_hp'] : 0)."</p>";
+            $class_data .= "<p class='box-text'>Abilities: ".(isset($value['class_rules']) ? $value['class_rules'] : "None")."</p>";
         }
     }
     if (isset($_GET['stat'])){
