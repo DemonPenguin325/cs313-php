@@ -8,6 +8,7 @@ function addRace(name){
             console.log(req.responseText);
             var info = JSON.parse(req.responseText);
             document.getElementById("race-info").innerHTML = info.race;
+            document.getElementById("stats-info").innerHTML = info.stats;
         }
     }
     req.open("GET", url, true);
@@ -23,6 +24,7 @@ function setClass(name){
             console.log(req.responseText);
             var info = JSON.parse(req.responseText);
             document.getElementById("class-info").innerHTML = info.class;
+            document.getElementById("stats-info").innerHTML = info.stats;
         }
     }
 
