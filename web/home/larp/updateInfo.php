@@ -30,7 +30,7 @@
             $specialName = "class_type";
         }
 
-        $stmt = $db->prepare('UPDATE public.'.$type.' SET '.$type.'_name = :name, '.$type.'_hp = :hp, '.$specialName.' = :special, '.$type.'_rules = :rules, '.$type.'_description = :desc WHERE '.$name.'_name = :name');
+        $stmt = $db->prepare('UPDATE public.'.$type.' SET '.$type.'_name = :name, '.$type.'_hp = :hp, '.$specialName.' = :special, '.$type.'_rules = :rules, '.$type.'_description = :desc WHERE '.$type.'_name = :name');
         $stmt->bindValue(':name', $name, PDO::PARAM_STR);
         $stmt->bindValue(':hp', $hp, PDO::PARAM_STR);
         $stmt->bindValue(':special', $special, PDO::PARAM_STR);
