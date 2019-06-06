@@ -72,8 +72,8 @@ $old_error_handler = set_error_handler("ErrorHandler");
     if (isset($_POST['item-to-edit'])){
         include 'init_database.php';
         $data = explode(";", $_POST['item-to-edit']);
-        $name = $data[0];
-        $type = $data[1];
+        $type = $data[0];
+        $name = $data[1];
 
         $name = htmlspecialchars($_POST['name']);
         $hp = htmlspecialchars($_POST['hp']);
