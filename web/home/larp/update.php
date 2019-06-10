@@ -48,9 +48,7 @@
         }
     }
 
-    // UNDER CONSTRUCTION. THIS ISN'T IN THE DATABASE YET
-
-    $stat_data = "<p class='box-text'>Total HP: ".$_SESSION['raceHP'] + $_SESSION['classHP']."</p>";
+    $stat_data = "<p class='box-text'>Total HP: ".($_SESSION['raceHP'] + $_SESSION['classHP'])."</p>";
     if ($_SESSION['isMagical']){
         $stat_data .= "<p class='box-text'>Bonus Rules: ".$_SESSION['magic_rule']."</p>";
     }
