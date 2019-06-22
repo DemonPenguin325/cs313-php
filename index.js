@@ -7,6 +7,7 @@ app.set('views', 'views')
 app.set('view engine', 'ejs')
 
 app.get('/calc', calcCost)
+app.get('/', function(req, res) {res.render('Hello world!')})
 
 app.listen(port, () => console.log('Mail app listening on port ' + port))
 
